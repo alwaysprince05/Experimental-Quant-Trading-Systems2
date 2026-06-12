@@ -6,7 +6,7 @@ colorTo: indigo
 sdk: docker
 app_port: 7860
 ---
-# Experimental Quant Trading Systems
+# Nexus Quant Terminal
 
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/alwaysprince05e/Nexus-Quant-Terminal)
 
@@ -14,7 +14,7 @@ app_port: 7860
 
 ## Dev/Creator = alwaysprince05
 
-This repository contains five experimental quant trading systems built using Python, statistical modeling, machine learning concepts, and synthetic market data.
+**Nexus Quant Terminal** is an interactive full-stack application (React frontend + FastAPI backend) that integrates five experimental quant trading systems built using Python, statistical modeling, machine learning concepts, and synthetic market data.
 
 The goal of these projects is to explore quantitative finance concepts through simulation, visualization, and research-focused experimentation.
 
