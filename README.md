@@ -1,3 +1,11 @@
+---
+title: Nexus Quant Terminal
+emoji: 📈
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+---
 # Experimental Quant Trading Systems
 
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/alwaysprince05e/Nexus-Quant-Terminal)

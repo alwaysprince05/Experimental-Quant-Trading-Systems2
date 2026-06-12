@@ -10,6 +10,9 @@ RUN npm run build
 # Stage 2: Setup Python Backend and serve
 FROM python:3.10-slim
 
+# Create user with UID 1000 as required by Hugging Face Spaces
+RUN useradd -m -u 1000 user
+
 WORKDIR /app
 
 # Install backend dependencies
@@ -24,6 +27,13 @@ COPY . .
 RUN rm -rf frontend
 RUN mkdir -p frontend/dist
 COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
+
+# Change ownership of the app directory to the new user
+RUN chown -R user:user /app
+
+# Switch to user
+USER user
+ENV PATH="/home/user/.local/bin:$PATH"
 
 # Expose Hugging Face default port
 EXPOSE 7860
