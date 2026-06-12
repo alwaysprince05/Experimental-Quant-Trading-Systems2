@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --accent-cyan: #00f2fe;
+  --accent-purple: #8A2BE2;
+  --accent-green: #00ff88;
+  --accent-red: #ff3366;
+  --text-main: #ffffff;
+  --text-dim: #8b949e;
+  --font-sans: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  background-image: url('/trading_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-main);
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Semi-transparent overlay to ensure text readability over the image */
+.ai-dashboard {
+  background-color: rgba(5, 7, 15, 0.7);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  padding: 16px;
+  gap: 16px;
+  overflow: hidden;
+}
+
+/* Helpers */
+.mono { font-family: var(--font-mono); }
+.text-green { color: var(--accent-green); }
+.text-red { color: var(--accent-red); }
+.text-cyan { color: var(--accent-cyan); }
+.text-white { color: #fff; }
+.text-dim { color: var(--text-dim); }
+.fw-bold { font-weight: 600; }
+.fw-light { font-weight: 300; }
+.glow-green { text-shadow: 0 0 10px var(--accent-green); }
+.glow-red { text-shadow: 0 0 10px var(--accent-red); }
+
+/* Glass Components */
+.glass-header {
+  height: 60px;
+  min-height: 60px;
+  background: rgba(15, 17, 26, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.header-stats {
+  display: flex;
+  gap: 16px;
+}
+
+.stat-pill {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  display: flex;
+  gap: 8px;
+}
+
+/* Main Layout Grid */
+.layout-grid {
+  display: flex;
+  gap: 16px;
+  height: calc(100vh - 108px); /* 100vh - (header + padding + gap) */
+  min-height: 0;
+}
+
+.layout-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+}
+
+.gap-16 { gap: 16px; }
+.flex-fill { flex: 1; min-height: 0; min-width: 0; }
+.flex-double { flex: 2; min-width: 0; }
+
+/* Glass Panel Base */
+.glass-panel {
+  background: rgba(15, 17, 26, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  min-width: 0;
+}
+
+.panel-title {
+  height: 36px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  background: rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.panel-body {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  min-height: 0;
+  min-width: 0;
+}
+
+/* Metrics */
+.metric-card {
+  padding: 24px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.metric-title {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.metric-huge {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+/* Charts */
+.chart-wrapper {
+  padding: 10px 10px 0 0;
+}
+
+.glass-tooltip {
+  background: rgba(10, 15, 30, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+}
+
+/* Order Book */
+.order-book {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  height: 100%;
+}
+
+.ob-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4px 8px 4px;
+  font-size: 0.75rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  margin-bottom: 4px;
+}
+
+.ob-asks, .ob-bids {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.ob-asks { justify-content: flex-end; }
+.ob-bids { justify-content: flex-start; }
+
+.ob-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 6px;
+  position: relative;
+  border-radius: 4px;
+  margin-bottom: 2px;
+}
+
+.ob-row span { z-index: 1; }
+
+.ob-bg {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  border-radius: 4px;
+  opacity: 0.15;
+  z-index: 0;
+  transition: width 0.1s ease;
+}
+
+.bg-red { background-color: var(--accent-red); }
+.bg-green { background-color: var(--accent-green); }
+
+.ob-spread {
+  text-align: center;
+  padding: 8px 0;
+  margin: 4px 0;
+  background: rgba(0,0,0,0.3);
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Exec Feed */
+.exec-feed {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  font-size: 0.75rem;
+  overflow: hidden;
+}
+
+.exec-row {
+  display: flex;
+  gap: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.exec-row span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.highlight-bg {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Loader Overlay */
+.loader-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--bg-deep);
+}
+
+.loader-icon {
+  color: var(--accent-cyan);
+  animation: pulse 1s infinite;
+  margin-bottom: 16px;
+}
+
+.loader-text {
+  font-family: var(--font-mono);
+  color: var(--accent-cyan);
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.1); }
+}
