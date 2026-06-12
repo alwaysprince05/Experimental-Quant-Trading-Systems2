@@ -12,6 +12,8 @@ app_port: 7860
 
 🚀 **Live Deployment:** [Nexus Quant Terminal on Hugging Face Spaces](https://huggingface.co/spaces/alwaysprince05e/Nexus-Quant-Terminal)
 
+![Nexus Quant Terminal Dashboard](dashboard.png)
+
 ## Dev/Creator = alwaysprince05
 
 **Nexus Quant Terminal** is an interactive full-stack application (React frontend + FastAPI backend) that integrates five experimental quant trading systems built using Python, statistical modeling, machine learning concepts, and synthetic market data.
