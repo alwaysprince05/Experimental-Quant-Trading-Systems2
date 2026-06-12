@@ -12,7 +12,7 @@ app_port: 7860
 
 🚀 **Live Deployment:** [Nexus Quant Terminal on Hugging Face Spaces](https://huggingface.co/spaces/alwaysprince05e/Nexus-Quant-Terminal)
 
-![Nexus Quant Terminal Dashboard](dashboard.png)
+![Nexus Quant Terminal Dashboard](https://huggingface.co/spaces/alwaysprince05e/Nexus-Quant-Terminal/resolve/main/dashboard.png)
 
 ## Dev/Creator = alwaysprince05
 
